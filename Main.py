@@ -70,6 +70,14 @@ class BinarySearchTreeNode:
 
         return elements
 
+    def delete(self, val):
+        if val < self.data:
+            if self.left:
+                self.left = self.left.delete(val)
+        elif val > self.data:
+            if self.right:
+                self.right = self.right.delete(val)
+
 
 def build_tree(elements):
     print("Building tree with these elements:", elements)
