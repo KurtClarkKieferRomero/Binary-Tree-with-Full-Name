@@ -56,6 +56,9 @@ class BinarySearchTreeNode:
 
         return root
 
+    if __name__ == '__main__':
+        countries = ["India", "Pakistan", "Germany", "USA", "China", "India", "UK", "USA"]
 
+        country_tree = build_tree(countries)
 
 
