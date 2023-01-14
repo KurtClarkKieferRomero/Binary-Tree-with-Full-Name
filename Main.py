@@ -85,6 +85,11 @@ class BinarySearchTreeNode:
             elif self.right is None:
                 return self.right
 
+    def find_max(self):  # This will continue to go the right subtree to find the max value
+        if self.right is None:
+            return self.data
+        return self.right.find_max()
+
 
 
 
