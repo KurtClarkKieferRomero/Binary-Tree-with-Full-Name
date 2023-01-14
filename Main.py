@@ -48,6 +48,16 @@ class BinarySearchTreeNode:
 
         return elements
 
+    def pre_order_traversal(self):
+        elements = [self.data]
+        if self.left:
+            elements += self.left.pre_order_traversal()
+
+        if self.right:
+            elements += self.right.pre_order_traversal()
+
+        return elements
+
 def build_tree(elements):
     print("Building tree with these elements:", elements)
     root = BinarySearchTreeNode(elements[0])
