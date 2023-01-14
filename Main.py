@@ -85,12 +85,18 @@ class BinarySearchTreeNode:
             elif self.right is None:
                 return self.right
 
+            min_val = self.right.find_min()
+            self.data = min_val
+            self.right = self.right.delete(min_val)
+
+        return self
+
     def find_max(self):  # This will continue to go the right subtree to find the max value
         if self.right is None:
             return self.data
         return self.right.find_max()
 
-    def find_min(self):
+    def find_min(self): # This will continue to go the left subtree to find the min value
         if self.left is None:
             return self.data
         return self.right.find_min()
