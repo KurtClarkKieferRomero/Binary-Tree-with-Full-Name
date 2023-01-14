@@ -41,7 +41,7 @@ class BinarySearchTreeNode:
         if self.left:
             elements += self.left.in_order_traversal()
 
-        elements.append(self.data)
+        elements.append(self.data)  # in order or in the middle of the list that the root node is placed
 
         if self.right:
             elements += self.right.in_order_traversal()
@@ -49,7 +49,7 @@ class BinarySearchTreeNode:
         return elements
 
     def pre_order_traversal(self):
-        elements = [self.data]
+        elements = [self.data]  # this is to put the Root node at the first list
         if self.left:
             elements += self.left.pre_order_traversal()
 
@@ -57,6 +57,19 @@ class BinarySearchTreeNode:
             elements += self.right.pre_order_traversal()
 
         return elements
+
+    def post_order_traversal(self):
+        elements = []
+        if self.left:
+            elements += self.left.post_order_traversal()
+
+        if self.right:
+            elements += self.right.post_order_traversal()
+
+        elements.append(self.data)  # after all the data has been traversed, the root node is displayed
+
+        return elements
+
 
 def build_tree(elements):
     print("Building tree with these elements:", elements)
@@ -71,5 +84,10 @@ if __name__ == '__main__':
     full_name = ['K', 'U', 'R', 'T', 'C', 'L', 'A', 'R', 'K', 'K', 'I', 'E', 'F', 'E', 'R', 'K', 'R', 'O', 'M', 'E', 'R', 'O']
 
     name_tree = build_tree(full_name)
+
+    print("In In-order traversal: ", name_tree.in_order_traversal())
+    print("In Pre-order traversal: ", name_tree.pre_order_traversal())
+    print("In Post-order traversal: ", name_tree.post_order_traversal())
+
 
 
