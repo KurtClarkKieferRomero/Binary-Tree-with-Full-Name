@@ -58,11 +58,8 @@ def build_tree(elements):
     return root
 
 if __name__ == '__main__':
-    countries = ["India", "Pakistan", "Germany", "USA", "China", "India", "UK", "USA"]
+    full_name = ['K', 'U', 'R', 'T', 'C', 'L', 'A', 'R', 'K', 'K', 'I', 'E', 'F', 'E', 'R', 'K', 'R', 'O', 'M', 'E', 'R', 'O']
 
-    country_tree = build_tree(countries)
-
-    print("UK is in the list? ", country_tree.search("India"))
-    print("Sweden is in the list? ", country_tree.search("China"))
+    name_tree = build_tree(full_name)
 
 
