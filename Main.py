@@ -78,12 +78,12 @@ class BinarySearchTreeNode:
             if self.right:
                 self.right = self.right.delete(val)
         else:
-            if self.left is None and self.Right is None:
+            if self.left is None and self.right is None:
                 return None
             elif self.left is None:
                 return self.right
             elif self.right is None:
-                return self.right
+                return self.left
 
             min_val = self.right.find_min()
             self.data = min_val
@@ -121,6 +121,9 @@ if __name__ == '__main__':
     print("In In-order traversal: ", name_tree.in_order_traversal())
     print("In Pre-order traversal: ", name_tree.pre_order_traversal())
     print("In Post-order traversal: ", name_tree.post_order_traversal())
+    print("========================================================================================")
+    name_tree.delete('I')
+    print("After deleting I ", name_tree.in_order_traversal())
 
 
 
